@@ -1,0 +1,231 @@
+{
+  "protocol": "lerobot-eval closed loop, 10 eps/task x 10 tasks, seed 42, n_action_steps=1, 10 flow steps, batch 1, ONNX Runtime CUDA EP, RTX 2060 6GB; latency = 50 warmup + 1000 timed calls",
+  "precision_note": "all arms are FP32 monolithic ONNX (tether 0.12.0 monolithic path ignores --precision)",
+  "ci_note": "Wilson score 95% intervals; suite n=100; Table IV groups n=50 (tasks truncated at width 16 vs not)",
+  "pytorch_amp_baseline": {
+    "spatial_pct": 70.0,
+    "object_pct": 88.0,
+    "spatial_wilson_ci_pct": [
+      60.4,
+      78.1
+    ],
+    "object_wilson_ci_pct": [
+      80.2,
+      93.0
+    ],
+    "spatial_n50_groups": {
+      "prev_trunc_at_16_successes": 38,
+      "prev_trunc_at_16_n": 50,
+      "prev_trunc_at_16_wilson_ci_pct": [
+        62.6,
+        85.7
+      ],
+      "untrunc_at_16_successes": 32,
+      "untrunc_at_16_n": 50,
+      "untrunc_at_16_wilson_ci_pct": [
+        50.1,
+        75.9
+      ]
+    },
+    "p99_ms": 1181
+  },
+  "widths": {
+    "16": {
+      "spatial_pct": 41.0,
+      "object_pct": 89.0,
+      "spatial_wilson_ci_pct": [
+        31.9,
+        50.8
+      ],
+      "object_wilson_ci_pct": [
+        81.4,
+        93.7
+      ],
+      "spatial_pct_replicate": 40.0,
+      "object_pct_replicate": 89.0,
+      "spatial_wilson_ci_pct_replicate": [
+        30.9,
+        49.8
+      ],
+      "object_wilson_ci_pct_replicate": [
+        81.4,
+        93.7
+      ],
+      "spatial_per_task": {
+        "0": 0.0,
+        "1": 10.0,
+        "2": 90.0,
+        "3": 70.0,
+        "4": 0.0,
+        "5": 20.0,
+        "6": 0.0,
+        "7": 80.0,
+        "8": 80.0,
+        "9": 60.0
+      },
+      "object_per_task": {
+        "0": 70.0,
+        "1": 90.0,
+        "2": 100.0,
+        "3": 100.0,
+        "4": 100.0,
+        "5": 100.0,
+        "6": 100.0,
+        "7": 40.0,
+        "8": 100.0,
+        "9": 90.0
+      },
+      "spatial_n50_groups": {
+        "prev_trunc_at_16_successes": 3,
+        "prev_trunc_at_16_n": 50,
+        "prev_trunc_at_16_wilson_ci_pct": [
+          2.1,
+          16.2
+        ],
+        "untrunc_at_16_successes": 38,
+        "untrunc_at_16_n": 50,
+        "untrunc_at_16_wilson_ci_pct": [
+          62.6,
+          85.7
+        ]
+      },
+      "truncated_spatial_tasks": 5,
+      "truncated_object_tasks": 0,
+      "p50_ms": 537.48,
+      "p99_ms": 583.59,
+      "nvidia_smi_used_mb": 3184,
+      "onnx_size_mb": 2329
+    },
+    "24": {
+      "spatial_pct": 75.0,
+      "object_pct": 90.0,
+      "spatial_wilson_ci_pct": [
+        65.7,
+        82.5
+      ],
+      "object_wilson_ci_pct": [
+        82.6,
+        94.5
+      ],
+      "spatial_pct_replicate": null,
+      "object_pct_replicate": null,
+      "spatial_wilson_ci_pct_replicate": null,
+      "object_wilson_ci_pct_replicate": null,
+      "spatial_per_task": {
+        "0": 50.0,
+        "1": 80.0,
+        "2": 100.0,
+        "3": 70.0,
+        "4": 70.0,
+        "5": 90.0,
+        "6": 70.0,
+        "7": 80.0,
+        "8": 80.0,
+        "9": 60.0
+      },
+      "object_per_task": {
+        "0": 90.0,
+        "1": 90.0,
+        "2": 100.0,
+        "3": 100.0,
+        "4": 90.0,
+        "5": 100.0,
+        "6": 100.0,
+        "7": 40.0,
+        "8": 100.0,
+        "9": 90.0
+      },
+      "spatial_n50_groups": {
+        "prev_trunc_at_16_successes": 36,
+        "prev_trunc_at_16_n": 50,
+        "prev_trunc_at_16_wilson_ci_pct": [
+          58.3,
+          82.5
+        ],
+        "untrunc_at_16_successes": 39,
+        "untrunc_at_16_n": 50,
+        "untrunc_at_16_wilson_ci_pct": [
+          64.8,
+          87.2
+        ]
+      },
+      "truncated_spatial_tasks": 0,
+      "truncated_object_tasks": 0,
+      "p50_ms": 544.51,
+      "p99_ms": 587.65,
+      "nvidia_smi_used_mb": 3178,
+      "onnx_size_mb": 2329
+    },
+    "32": {
+      "spatial_pct": 71.0,
+      "object_pct": 87.0,
+      "spatial_wilson_ci_pct": [
+        61.5,
+        79.0
+      ],
+      "object_wilson_ci_pct": [
+        79.0,
+        92.2
+      ],
+      "spatial_pct_replicate": null,
+      "object_pct_replicate": null,
+      "spatial_wilson_ci_pct_replicate": null,
+      "object_wilson_ci_pct_replicate": null,
+      "spatial_per_task": {
+        "0": 40.0,
+        "1": 80.0,
+        "2": 100.0,
+        "3": 60.0,
+        "4": 70.0,
+        "5": 90.0,
+        "6": 60.0,
+        "7": 80.0,
+        "8": 80.0,
+        "9": 50.0
+      },
+      "object_per_task": {
+        "0": 70.0,
+        "1": 90.0,
+        "2": 100.0,
+        "3": 100.0,
+        "4": 100.0,
+        "5": 100.0,
+        "6": 100.0,
+        "7": 30.0,
+        "8": 90.0,
+        "9": 90.0
+      },
+      "spatial_n50_groups": {
+        "prev_trunc_at_16_successes": 34,
+        "prev_trunc_at_16_n": 50,
+        "prev_trunc_at_16_wilson_ci_pct": [
+          54.2,
+          79.2
+        ],
+        "untrunc_at_16_successes": 37,
+        "untrunc_at_16_n": 50,
+        "untrunc_at_16_wilson_ci_pct": [
+          60.4,
+          84.1
+        ]
+      },
+      "truncated_spatial_tasks": 0,
+      "truncated_object_tasks": 0,
+      "p50_ms": 549.22,
+      "p99_ms": 591.25,
+      "nvidia_smi_used_mb": 3178,
+      "onnx_size_mb": 2330
+    }
+  },
+  "pytorch_vs_width24_spatial_two_proportion": {
+    "method": "chi2_contingency_continuity_correction",
+    "k1": 70,
+    "n1": 100,
+    "k2": 75,
+    "n2": 100,
+    "statistic": 0.4013,
+    "dof": 1,
+    "p_value": 0.5264423907155575,
+    "comparison": "pytorch_amp_spatial_vs_onnx_width24_spatial"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "export": "/home/rafiqul/Documents/Projects/Research/VLAResearch/exports/smolvla_libero",
+  "lang_len": 16,
+  "provider": "CUDAExecutionProvider",
+  "onnxruntime": "1.22.0",
+  "warmup": 50,
+  "iters": 1000,
+  "p50_ms": 537.48,
+  "p95_ms": 571.69,
+  "p99_ms": 583.59,
+  "mean_ms": 535.77,
+  "min_ms": 485.59,
+  "nvidia_smi_used_mb": 3184,
+  "onnx_size_mb": 2329,
+  "timestamp": "2026-09-10T00:30:14"
+}

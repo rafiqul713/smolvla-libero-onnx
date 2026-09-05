@@ -1,0 +1,17 @@
+{
+  "tag": "int8",
+  "reference_export": "exports/smolvla_libero",
+  "candidate_export": "exports/smolvla_libero_int8",
+  "comparison": "onnx_reference_vs_onnx_candidate",
+  "samples": 200,
+  "seed": 42,
+  "cosine_min": 0.9999999999999998,
+  "cosine_mean": 1.0,
+  "cosine_p50": 1.0,
+  "cosine_p99": 1.0000000000000002,
+  "max_abs_max": 0.0,
+  "max_abs_mean": 0.0,
+  "gate_min_cosine_0.99": true,
+  "gate_min_cosine_0.9999": true,
+  "wall_s": 249.9
+}

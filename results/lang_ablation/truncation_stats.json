@@ -1,0 +1,155 @@
+{
+  "tokenizer_step": "TokenizerProcessorStep",
+  "tokenizer_name": "HuggingFaceTB/SmolVLM2-500M-Instruct",
+  "tokenizer_max_length": 48,
+  "pad_language_to": "longest",
+  "widths": [
+    16,
+    24,
+    32
+  ],
+  "suites": {
+    "libero_spatial": {
+      "tasks": [
+        {
+          "task_id": 0,
+          "instruction": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+          "n_tokens_fed": 20,
+          "n_tokens_raw_no_newline": 19
+        },
+        {
+          "task_id": 1,
+          "instruction": "pick up the black bowl next to the ramekin and place it on the plate",
+          "n_tokens_fed": 18,
+          "n_tokens_raw_no_newline": 17
+        },
+        {
+          "task_id": 2,
+          "instruction": "pick up the black bowl from table center and place it on the plate",
+          "n_tokens_fed": 15,
+          "n_tokens_raw_no_newline": 14
+        },
+        {
+          "task_id": 3,
+          "instruction": "pick up the black bowl on the cookie box and place it on the plate",
+          "n_tokens_fed": 16,
+          "n_tokens_raw_no_newline": 15
+        },
+        {
+          "task_id": 4,
+          "instruction": "pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate",
+          "n_tokens_fed": 20,
+          "n_tokens_raw_no_newline": 19
+        },
+        {
+          "task_id": 5,
+          "instruction": "pick up the black bowl on the ramekin and place it on the plate",
+          "n_tokens_fed": 17,
+          "n_tokens_raw_no_newline": 16
+        },
+        {
+          "task_id": 6,
+          "instruction": "pick up the black bowl next to the cookie box and place it on the plate",
+          "n_tokens_fed": 17,
+          "n_tokens_raw_no_newline": 16
+        },
+        {
+          "task_id": 7,
+          "instruction": "pick up the black bowl on the stove and place it on the plate",
+          "n_tokens_fed": 15,
+          "n_tokens_raw_no_newline": 14
+        },
+        {
+          "task_id": 8,
+          "instruction": "pick up the black bowl next to the plate and place it on the plate",
+          "n_tokens_fed": 16,
+          "n_tokens_raw_no_newline": 15
+        },
+        {
+          "task_id": 9,
+          "instruction": "pick up the black bowl on the wooden cabinet and place it on the plate",
+          "n_tokens_fed": 16,
+          "n_tokens_raw_no_newline": 15
+        }
+      ],
+      "mean_tokens_fed": 17.0,
+      "max_tokens_fed": 20,
+      "truncated_at_width": {
+        "16": 5,
+        "24": 0,
+        "32": 0
+      }
+    },
+    "libero_object": {
+      "tasks": [
+        {
+          "task_id": 0,
+          "instruction": "pick up the alphabet soup and place it in the basket",
+          "n_tokens_fed": 12,
+          "n_tokens_raw_no_newline": 11
+        },
+        {
+          "task_id": 1,
+          "instruction": "pick up the cream cheese and place it in the basket",
+          "n_tokens_fed": 12,
+          "n_tokens_raw_no_newline": 11
+        },
+        {
+          "task_id": 2,
+          "instruction": "pick up the salad dressing and place it in the basket",
+          "n_tokens_fed": 12,
+          "n_tokens_raw_no_newline": 11
+        },
+        {
+          "task_id": 3,
+          "instruction": "pick up the bbq sauce and place it in the basket",
+          "n_tokens_fed": 13,
+          "n_tokens_raw_no_newline": 12
+        },
+        {
+          "task_id": 4,
+          "instruction": "pick up the ketchup and place it in the basket",
+          "n_tokens_fed": 13,
+          "n_tokens_raw_no_newline": 12
+        },
+        {
+          "task_id": 5,
+          "instruction": "pick up the tomato sauce and place it in the basket",
+          "n_tokens_fed": 12,
+          "n_tokens_raw_no_newline": 11
+        },
+        {
+          "task_id": 6,
+          "instruction": "pick up the butter and place it in the basket",
+          "n_tokens_fed": 11,
+          "n_tokens_raw_no_newline": 10
+        },
+        {
+          "task_id": 7,
+          "instruction": "pick up the milk and place it in the basket",
+          "n_tokens_fed": 11,
+          "n_tokens_raw_no_newline": 10
+        },
+        {
+          "task_id": 8,
+          "instruction": "pick up the chocolate pudding and place it in the basket",
+          "n_tokens_fed": 12,
+          "n_tokens_raw_no_newline": 11
+        },
+        {
+          "task_id": 9,
+          "instruction": "pick up the orange juice and place it in the basket",
+          "n_tokens_fed": 12,
+          "n_tokens_raw_no_newline": 11
+        }
+      ],
+      "mean_tokens_fed": 12.0,
+      "max_tokens_fed": 13,
+      "truncated_at_width": {
+        "16": 0,
+        "24": 0,
+        "32": 0
+      }
+    }
+  }
+}

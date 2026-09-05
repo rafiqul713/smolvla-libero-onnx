@@ -1,0 +1,15 @@
+{
+  "gpu": "NVIDIA GeForce RTX 2060",
+  "precision": "int8_trt",
+  "export_dir": "exports/smolvla_libero_int8",
+  "provider": "Active EP: CUDAExecutionProvider, CPUExecutionProvider",
+  "runs": 1000,
+  "warmup": 50,
+  "timestamp": "2026-08-27T22:56:11+0200",
+  "mean_ms": 497.5,
+  "p50_ms": 498.16,
+  "p95_ms": 516.6,
+  "p99_ms": 532.4,
+  "peak_vram_mb": 46,
+  "log": "results/int8_trt/bench.log"
+}

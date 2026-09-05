@@ -1,0 +1,14 @@
+{
+  "gpu": "NVIDIA GeForce RTX 2060",
+  "precision": "fp16_trt",
+  "export_dir": "exports/smolvla_libero",
+  "runs": 1000,
+  "warmup": 50,
+  "timestamp": "2026-08-27T21:47:40+0200",
+  "mean_ms": 528.6,
+  "p50_ms": 526.93,
+  "p95_ms": 559.62,
+  "p99_ms": 601.43,
+  "peak_vram_mb": 46,
+  "log": "results/fp16_trt/bench.log"
+}

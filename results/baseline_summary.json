@@ -1,0 +1,190 @@
+{
+  "project_phase": "v1_rtx2060_only",
+  "note": "No Jetson \u2014 personal RTX 2060 only. Valeo hardware not used.",
+  "model": "HuggingFaceVLA/smolvla_libero",
+  "mujoco_version": "3.3.2",
+  "gpu": "NVIDIA RTX 2060 6GB",
+  "eval_protocol": {
+    "n_action_steps": 1,
+    "num_steps": 10,
+    "n_episodes_per_task": 10,
+    "batch_size": 1,
+    "seed": 42,
+    "suites": [
+      "libero_spatial",
+      "libero_object"
+    ]
+  },
+  "baselines_from_smolvla_paper_450m": {
+    "libero_spatial_pct": 96,
+    "libero_object_pct": 92,
+    "libero_goal_pct": 71,
+    "libero_long_pct": 87,
+    "average_pct": 87.3
+  },
+  "smoke_test_not_for_paper_main_table": {
+    "date": "2026-08-25",
+    "suite": "libero_spatial",
+    "task_ids": [
+      0
+    ],
+    "n_episodes": 2,
+    "pc_success": 50.0,
+    "wall_s": 616.18,
+    "output_dir": "results/fp32_smoke",
+    "notes": "Pipeline sanity only; do not cite as Spatial accuracy."
+  },
+  "our_results": {
+    "fp32_pytorch": {
+      "libero_spatial_pct": 70.0,
+      "libero_object_pct": 88.0,
+      "p99_ms": 1181.11,
+      "peak_vram_mb": 2208,
+      "status": "complete",
+      "spatial_output_dir": "results/fp32_pytorch/libero_spatial",
+      "load_vlm_weights": false,
+      "use_amp": true,
+      "p50_ms": 902.94,
+      "p95_ms": 1101.69,
+      "latency_runs": 1000,
+      "latency_note": "PyTorch eager + AMP, n_action_steps=1, 10 flow steps, RTX 2060",
+      "latency_fp32_noamp": {
+        "p50_ms": 991.83,
+        "p95_ms": 1166.36,
+        "p99_ms": 1260.86,
+        "runs": 1000
+      },
+      "libero_spatial_wilson_ci_pct": [
+        60.4,
+        78.1
+      ],
+      "libero_object_wilson_ci_pct": [
+        80.2,
+        93.0
+      ]
+    },
+    "fp16_trt": {
+      "libero_spatial_pct": 41.0,
+      "libero_object_pct": 89.0,
+      "p50_ms": 526.93,
+      "p99_ms": 601.43,
+      "peak_vram_mb": 3200,
+      "fits_orin_nano_8gb_analysis": null,
+      "p95_ms": 559.62,
+      "mean_ms": 528.6,
+      "latency_runs": 1000,
+      "provider": "CUDAExecutionProvider (ONNX Runtime 1.22, FP16 export; TensorRT EP not active)",
+      "onnx_size_mb": 2340,
+      "speedup_vs_pytorch_p99": 1.96,
+      "notes": "Closed-loop LIBERO measured on RTX 2060 (100 eps/suite, seed 42). Spatial 41.0%, Object 89.0%.",
+      "parity_min_cosine": 0.9999999999999998,
+      "parity_mean_cosine": 1.0,
+      "parity_pass_0.99": true,
+      "parity_samples": 200,
+      "parity_json": "results/parity/fp16_parity.json",
+      "parity_method": "onnx_reference_vs_onnx_candidate",
+      "spatial_output_dir": "results/fp16_trt/libero_spatial",
+      "object_output_dir": "results/fp16_trt/libero_object",
+      "libero_measured": true,
+      "libero_spatial_wilson_ci_pct": [
+        31.9,
+        50.8
+      ],
+      "libero_object_wilson_ci_pct": [
+        81.4,
+        93.7
+      ]
+    },
+    "int8_trt": {
+      "libero_spatial_pct": 40.0,
+      "libero_object_pct": 89.0,
+      "p50_ms": 498.16,
+      "p99_ms": 532.4,
+      "peak_vram_mb": 46,
+      "silent_quant_failure": false,
+      "notes": "Closed-loop LIBERO measured on RTX 2060 (100 eps/suite, seed 42). Spatial 40.0%, Object 89.0%.",
+      "p95_ms": 516.6,
+      "mean_ms": 497.5,
+      "latency_runs": 1000,
+      "provider": "Active EP: CUDAExecutionProvider, CPUExecutionProvider",
+      "latency_json": "results/int8_trt/latency.json",
+      "speedup_vs_fp16_p99": 1.13,
+      "parity_min_cosine": 0.9999999999999998,
+      "parity_mean_cosine": 1.0,
+      "parity_pass_0.99": true,
+      "parity_samples": 200,
+      "parity_json": "results/parity/int8_parity.json",
+      "parity_method": "onnx_reference_vs_onnx_candidate",
+      "spatial_output_dir": "results/int8_trt/libero_spatial",
+      "object_output_dir": "results/int8_trt/libero_object",
+      "libero_measured": true,
+      "libero_spatial_wilson_ci_pct": [
+        30.9,
+        49.8
+      ],
+      "libero_object_wilson_ci_pct": [
+        81.4,
+        93.7
+      ]
+    },
+    "mixed_trt": {
+      "libero_spatial_pct": null,
+      "libero_object_pct": null,
+      "p99_ms": null,
+      "notes": "INT8 vision + FP16 action \u2014 only if full INT8 fails"
+    }
+  },
+  "edge_reference_not_our_measurement": {
+    "vla_cpp_orin_nano_ms": 141.81,
+    "vla_cpp_rtx3060_ms": 28.16,
+    "source": "vla.cpp CoRL 2026"
+  },
+  "last_updated": "2026-09-05",
+  "experiment_status": "icra_libero_measured",
+  "submission_notes": "FP16+INT8 LIBERO re-eval complete. Latency + parity from v1. TRT EP optional on 12 GB+ GPU.",
+  "closed_loop_onnx_libero": {
+    "status": "complete_measured",
+    "fp16_spatial_pct": 41.0,
+    "fp16_object_pct": 89.0,
+    "int8_spatial_pct": 40.0,
+    "int8_object_pct": 89.0,
+    "fix": "Pass LeRobot lang_tokens[:16] + camera masks to ONNX; do not retokenize with SmolLM2",
+    "script": "scripts/libero_onnx_eval.py",
+    "verify_script": "scripts/run_smolvla_verify.py"
+  },
+  "paired_verify_fp16": {
+    "status": "complete",
+    "protocol": "tether run_libero_rollout, 30 eps/task, seed 42, select_action both arms",
+    "script": "scripts/run_smolvla_verify.py",
+    "spatial": {
+      "original_pct": 56.666666666666664,
+      "optimized_pct": 33.0,
+      "parity_gap_pct": -23.666666666666664,
+      "json": "results/verify/fp16_libero_spatial_30eps.json",
+      "mcnemar": {
+        "n_pairs": 300,
+        "b_pytorch_success_onnx_fail": 104,
+        "c_pytorch_fail_onnx_success": 33,
+        "statistic": 35.7664,
+        "p_value": 2.2244880424991736e-09,
+        "method": "mcnemar_continuity_correction"
+      }
+    },
+    "object": {
+      "original_pct": 73.33333333333333,
+      "optimized_pct": 74.0,
+      "parity_gap_pct": 0.6666666666666714,
+      "json": "results/verify/fp16_libero_object_30eps.json",
+      "mcnemar": {
+        "n_pairs": 300,
+        "b_pytorch_success_onnx_fail": 34,
+        "c_pytorch_fail_onnx_success": 36,
+        "statistic": 0.0143,
+        "p_value": 0.9048611294504482,
+        "method": "mcnemar_continuity_correction"
+      }
+    },
+    "notes": "Absolute rates differ from lerobot-eval (70/88, 41/89) due to rollout loop; Object gap near zero; Spatial gap large (16-token ONNX)."
+  },
+  "progress_doc": "docs/PROGRESS.md"
+}

@@ -1,0 +1,150 @@
+{
+  "tokenizer": "HuggingFaceTB/SmolVLM2-500M-Instruct",
+  "onnx_max_lang": 16,
+  "suites": {
+    "spatial": {
+      "n_tasks": 10,
+      "token_lengths": [
+        19,
+        17,
+        14,
+        15,
+        19,
+        16,
+        16,
+        14,
+        15,
+        15
+      ],
+      "mean": 16.0,
+      "min": 14,
+      "max": 19,
+      "n_exceed_16": 3,
+      "frac_exceed_16": 0.3,
+      "tasks": [
+        {
+          "text": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+          "n_tokens": 19,
+          "truncated": true
+        },
+        {
+          "text": "pick up the black bowl next to the ramekin and place it on the plate",
+          "n_tokens": 17,
+          "truncated": true
+        },
+        {
+          "text": "pick up the black bowl from table center and place it on the plate",
+          "n_tokens": 14,
+          "truncated": false
+        },
+        {
+          "text": "pick up the black bowl on the cookie box and place it on the plate",
+          "n_tokens": 15,
+          "truncated": false
+        },
+        {
+          "text": "pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate",
+          "n_tokens": 19,
+          "truncated": true
+        },
+        {
+          "text": "pick up the black bowl on the ramekin and place it on the plate",
+          "n_tokens": 16,
+          "truncated": false
+        },
+        {
+          "text": "pick up the black bowl next to the cookie box and place it on the plate",
+          "n_tokens": 16,
+          "truncated": false
+        },
+        {
+          "text": "pick up the black bowl on the stove and place it on the plate",
+          "n_tokens": 14,
+          "truncated": false
+        },
+        {
+          "text": "pick up the black bowl next to the plate and place it on the plate",
+          "n_tokens": 15,
+          "truncated": false
+        },
+        {
+          "text": "pick up the black bowl on the wooden cabinet and place it on the plate",
+          "n_tokens": 15,
+          "truncated": false
+        }
+      ]
+    },
+    "object": {
+      "n_tasks": 10,
+      "token_lengths": [
+        11,
+        11,
+        11,
+        12,
+        12,
+        11,
+        10,
+        10,
+        11,
+        11
+      ],
+      "mean": 11.0,
+      "min": 10,
+      "max": 12,
+      "n_exceed_16": 0,
+      "frac_exceed_16": 0.0,
+      "tasks": [
+        {
+          "text": "pick up the alphabet soup and place it in the basket",
+          "n_tokens": 11,
+          "truncated": false
+        },
+        {
+          "text": "pick up the cream cheese and place it in the basket",
+          "n_tokens": 11,
+          "truncated": false
+        },
+        {
+          "text": "pick up the salad dressing and place it in the basket",
+          "n_tokens": 11,
+          "truncated": false
+        },
+        {
+          "text": "pick up the bbq sauce and place it in the basket",
+          "n_tokens": 12,
+          "truncated": false
+        },
+        {
+          "text": "pick up the ketchup and place it in the basket",
+          "n_tokens": 12,
+          "truncated": false
+        },
+        {
+          "text": "pick up the tomato sauce and place it in the basket",
+          "n_tokens": 11,
+          "truncated": false
+        },
+        {
+          "text": "pick up the butter and place it in the basket",
+          "n_tokens": 10,
+          "truncated": false
+        },
+        {
+          "text": "pick up the milk and place it in the basket",
+          "n_tokens": 10,
+          "truncated": false
+        },
+        {
+          "text": "pick up the chocolate pudding and place it in the basket",
+          "n_tokens": 11,
+          "truncated": false
+        },
+        {
+          "text": "pick up the orange juice and place it in the basket",
+          "n_tokens": 11,
+          "truncated": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "gpu": "NVIDIA GeForce RTX 2060",
+  "precision": "fp32_pytorch",
+  "model": "HuggingFaceVLA/smolvla_libero",
+  "n_action_steps": 1,
+  "num_flow_steps": 10,
+  "runs": 1000,
+  "warmup": 50,
+  "mean_ms": 997.71,
+  "p50_ms": 991.83,
+  "p95_ms": 1166.36,
+  "p99_ms": 1260.86,
+  "peak_vram_allocated_mb": 1509,
+  "nvidia_smi_used_mb": 2198,
+  "timestamp": "2026-08-27T14:59:23+0200"
+}

@@ -1,0 +1,29 @@
+{
+  "description": "Open-loop check on identical inputs (seed 0 random images/state/noise; real LIBERO instructions tokenized by the checkpoint's LeRobot tokenizer step). PyTorch = SmolVLAPolicy.model.sample_actions FP32 CUDA, full untruncated instruction. ONNX = FP32 monolithic graphs, ONNX Runtime CUDA EP, instruction truncated/padded to the static width.",
+  "instructions": {
+    "instr0": "pick up the black bowl between the plate and the ramekin and place it on the plate (LIBERO-Spatial, 19 tokens)",
+    "instr1": "pick up the alphabet soup and place it in the basket (LIBERO-Object, 11 tokens)"
+  },
+  "results": {
+    "instr0": {
+      "n_tokens": 19,
+      "truncated_at_16": true,
+      "cos_w16_vs_torch": 0.952171,
+      "maxabs_w16_vs_torch": 1.7259,
+      "cos_w24_vs_torch": 0.999974,
+      "maxabs_w24_vs_torch": 0.0279,
+      "cos_w16_vs_w24": 0.951819,
+      "maxabs_w16_vs_w24": 1.73
+    },
+    "instr1": {
+      "n_tokens": 11,
+      "truncated_at_16": false,
+      "cos_w16_vs_torch": 0.999938,
+      "maxabs_w16_vs_torch": 0.114,
+      "cos_w24_vs_torch": 0.999938,
+      "maxabs_w24_vs_torch": 0.114,
+      "cos_w16_vs_w24": 1.0,
+      "maxabs_w16_vs_w24": 3.76e-06
+    }
+  }
+}
